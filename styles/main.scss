@@ -1,0 +1,24 @@
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+@use "./partials/typography" as *;
+@use "./partials/resets";
+
+.header {
+  background-color: black;
+  height: 60px;
+  &__image {
+  }
+  &__btn {
+  }
+}
+
+.main {
+}
+
+.weather {
+}
+
+.music {
+}
+.footer {
+}
