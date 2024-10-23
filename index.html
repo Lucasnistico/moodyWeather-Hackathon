@@ -14,32 +14,43 @@
   </head>
   <body>
     <header class="header">
-      <div class="header__image"></div>
       <div class="header__btn">
-        <button type="submit" class="header__btn">Check My Mood</button>
+        <a href="#weather__btn">
+          <button type="submit" class="header__btn">Check My Mood</button>
+        </a>
       </div>
     </header>
-    <main>
-      <section class="weather" id="weather"></section>
-      <h2 class="weather__title">Where are you?</h2>
-      <form action="" class="weather__form">
-        <label class="weather__city" for="city">City</label>
-        <input
-          class="weather__input"
-          type="text"
-          id="city"
-          name="city"
-          placeholder="Enter your city name"
-        />
-        <button type="submit" class="weather__btn">Check Weather</button>
-      </form>
+    <main class="main">
+      <section class="weather" id="weather">
+        <h2 class="weather__title">Where are you?</h2>
+        <form action="" method="post" class="weather__form">
+          <label class="weather__city" for="city"> &#127968;CITY</label>
+          <input
+            class="weather__input"
+            type="text"
+            id="city"
+            name="city"
+            placeholder="Enter your city name"
+          />
+          <button type="submit" class="weather__btn" id="weather__btn">
+            Check Weather
+          </button>
+        </form>
+
+        <section class="weather__reponse">
+          <ul class="weather__response"></ul>
+        </section>
+      </section>
 
       <section class="music" id="music">
         <h2 class="music__title">
           Here's a suggestion based on Weather Vibes!
         </h2>
+        <section class="playlist__response"></section>
       </section>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <p>This is the footer content</p>
+    </footer>
   </body>
 </html>

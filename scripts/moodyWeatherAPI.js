@@ -22,8 +22,8 @@ function getPlaylistByTemperature(temp) {
   } else if (temp >= 20) {
     return "Chill Beats 🌤️ - Still quite pleasant.";
   } else if (temp >= 10) {
-    return "Autumn Mellow 🍂 - Getting Chilli.";
+    return "Getting Chilli 🍂 - Getting Chilli.";
   } else {
-    return "Cozy & Warm 🔥 - Better Stay In.";
+    return "Cozy Coffee Shop 🔥 - Better Stay In.";
   }
 }
