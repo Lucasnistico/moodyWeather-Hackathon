@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME | MoodyWeather</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
+    <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/moodyWeatherAPI.js"></script>
+    <link rel="stylesheet" href="./styles/main.gitcheckocss" />
+  </head>
+  <body>
+    <header>
+      <div class="header__image"></div>
+      <button type="submit" class="header__btn">Check My Mood</button>
+    </header>
+    <main>
+      <section class="weather" id="weather"></section>
+      <h2 class="weather__title">Where are you?</h2>
+      <form action="" class="weather__form">
+        <label class="weather__city" for="city">City</label>
+        <input
+          class="weather__input"
+          type="text"
+          id="city"
+          name="city"
+          placeholder="Enter your city name"
+        />
+        <button type="submit" class="weather__btn">Check Weather</button>
+      </form>
+
+      <section class="music" id="music">
+        <h2 class="music__title">
+          Here's a suggestion based on Weather Vibes!
+        </h2>
+      </section>
+    </main>
+    <footer class="footer"></footer>
+  </body>
+</html>
