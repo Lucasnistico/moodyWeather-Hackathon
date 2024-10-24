@@ -4,20 +4,26 @@
   box-sizing: border-box;
 }
 
-@keyframes glowing-btn {
+@keyframes zoomBackgroundTablet {
   0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
+    background-size: 100%;
   }
   100% {
-    background-position: 0 0;
+    background-size: 150%;
+  }
+}
+@keyframes zoomBackgroundDesktop {
+  0% {
+    background-size: 150%;
+  }
+  100% {
+    background-size: 110%;
   }
 }
 .header {
   background-color: black;
   height: 100vh;
+  width: 100%;
   background-image: url(../assets/images/moodyWeatherHead.webp);
   background-position: center;
   background-size: cover;
@@ -29,6 +35,16 @@
   align-items: end;
   justify-content: center;
 }
+@media screen and (min-width: 768px) {
+  .header {
+    animation: zoomBackgroundTablet 3s ease-in-out 1 forwards;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    animation: zoomBackgroundDesktop 3s ease-in-out 1 forwards;
+  }
+}
 .header__btn {
   background-image: linear-gradient(#42a1ec, #0070c9);
   border: 1px solid #0077cc;
@@ -37,7 +53,7 @@
   cursor: pointer;
   font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.022em;
   line-height: 1.27059;
   padding: 0.25rem 1rem;
@@ -51,7 +67,7 @@
 }
 .header__btn-:disabled {
   cursor: default;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 .header__btn-:hover {
   background-image: linear-gradient(#51a9ee, #147bcd);
@@ -71,6 +87,10 @@
 .main {
   background-color: black;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .weather {
@@ -81,10 +101,26 @@
   height: 30rem;
 }
 .weather__title {
-  margin: 1rem auto;
+  margin: 2rem auto;
+}
+.weather__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.weather__city {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 10px;
 }
 .weather__input {
-  height: 2rem;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 300px;
 }
 .weather__btn {
   background-image: linear-gradient(#42a1ec, #0070c9);
@@ -94,7 +130,7 @@
   cursor: pointer;
   font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.022em;
   line-height: 1.27059;
   padding: 0.25rem 1rem;
@@ -108,7 +144,7 @@
 }
 .weather__btn-:disabled {
   cursor: default;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 .weather__btn-:hover {
   background-image: linear-gradient(#51a9ee, #147bcd);
@@ -125,13 +161,48 @@
   outline: none;
 }
 .weather__response {
+  margin-top: 2rem;
   border: solid 2px white;
   list-style: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 .music {
   display: flex;
+  width: 100%;
   height: 10rem;
+}
+.music__space-invider {
+  --block-size: 5px;
+  box-shadow: 0 0 0 var(--block-size) white, 0 var(--block-size) 0 var(--block-size) white, calc(var(--block-size) * -2.5) calc(var(--block-size) * 1.5) 0 calc(var(--block-size) * 0.5) white, calc(var(--block-size) * 2.5) calc(var(--block-size) * 1.5) 0 calc(var(--block-size) * 0.5) white, calc(var(--block-size) * -3) calc(var(--block-size) * -3) 0 0 white, calc(var(--block-size) * 3) calc(var(--block-size) * -3) 0 0 white, calc(var(--block-size) * -2) calc(var(--block-size) * -2) 0 0 white, calc(var(--block-size) * 2) calc(var(--block-size) * -2) 0 0 white, calc(var(--block-size) * -3) calc(var(--block-size) * -1) 0 0 white, calc(var(--block-size) * -2) calc(var(--block-size) * -1) 0 0 white, calc(var(--block-size) * 2) calc(var(--block-size) * -1) 0 0 white, calc(var(--block-size) * 3) calc(var(--block-size) * -1) 0 0 white, calc(var(--block-size) * -4) 0 0 0 white, calc(var(--block-size) * -3) 0 0 0 white, calc(var(--block-size) * 3) 0 0 0 white, calc(var(--block-size) * 4) 0 0 0 white, calc(var(--block-size) * -5) var(--block-size) 0 0 white, calc(var(--block-size) * -4) var(--block-size) 0 0 white, calc(var(--block-size) * 4) var(--block-size) 0 0 white, calc(var(--block-size) * 5) var(--block-size) 0 0 white, calc(var(--block-size) * -5) calc(var(--block-size) * 2) 0 0 white, calc(var(--block-size) * 5) calc(var(--block-size) * 2) 0 0 white, calc(var(--block-size) * -5) calc(var(--block-size) * 3) 0 0 white, calc(var(--block-size) * -3) calc(var(--block-size) * 3) 0 0 white, calc(var(--block-size) * 3) calc(var(--block-size) * 3) 0 0 white, calc(var(--block-size) * 5) calc(var(--block-size) * 3) 0 0 white, calc(var(--block-size) * -2) calc(var(--block-size) * 4) 0 0 white, calc(var(--block-size) * -1) calc(var(--block-size) * 4) 0 0 white, var(--block-size) calc(var(--block-size) * 4) 0 0 white, calc(var(--block-size) * 2) calc(var(--block-size) * 4) 0 0 white;
+  background: white;
+  width: var(--block-size);
+  height: var(--block-size);
+  overflow: hidden;
 }
 
 .footer {

@@ -22,7 +22,9 @@
     </header>
     <main class="main">
       <section class="weather" id="weather">
-        <h2 class="weather__title">Where are you?</h2>
+        <div>
+          <h2 class="weather__title">Where are you?</h2>
+        </div>
         <form action="" method="post" class="weather__form">
           <label class="weather__city" for="city"> &#127968;CITY</label>
           <input
@@ -36,21 +38,22 @@
             Check Weather
           </button>
         </form>
-
         <section class="weather__reponse">
           <ul class="weather__response"></ul>
         </section>
       </section>
-
       <section class="music" id="music">
-        <h2 class="music__title">
-          Here's a suggestion based on Weather Vibes!
-        </h2>
+        <div class="music__title-wrap">
+          <h2 class="music__title">
+            Here's a suggestion based on Weather Vibes!
+          </h2>
+        </div>
+        <div class="music__space-invider"></div>
         <section class="playlist__response"></section>
       </section>
     </main>
     <footer class="footer">
-      <p>This is the footer content</p>
+      <p class="footer__quote">"Your motivational quote will appear here."</p>
     </footer>
   </body>
 </html>

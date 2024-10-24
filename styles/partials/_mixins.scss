@@ -9,7 +9,7 @@
   font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue",
     Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.022em;
   line-height: 1.27059;
   padding: 0.25rem 1rem;
@@ -20,10 +20,9 @@
   touch-action: manipulation;
   white-space: nowrap;
 }
-
 @mixin button-disabled {
   cursor: default;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 @mixin button-hover {
   background-image: linear-gradient(#51a9ee, #147bcd);
@@ -39,9 +38,82 @@
   box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
   outline: none;
 }
-
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+@mixin response {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+@mixin space-invider {
+  --block-size: 5px;
+  box-shadow: 0 0 0 var(--block-size) #ffff,
+    0 var(--block-size) 0 var(--block-size) #ffff,
+    calc(var(--block-size) * -2.5) calc(var(--block-size) * 1.5) 0
+      calc(var(--block-size) * 0.5) #ffff,
+    calc(var(--block-size) * 2.5) calc(var(--block-size) * 1.5) 0
+      calc(var(--block-size) * 0.5) #ffff,
+    calc(var(--block-size) * -3) calc(var(--block-size) * -3) 0 0 #ffff,
+    calc(var(--block-size) * 3) calc(var(--block-size) * -3) 0 0 #ffff,
+    calc(var(--block-size) * -2) calc(var(--block-size) * -2) 0 0 #ffff,
+    calc(var(--block-size) * 2) calc(var(--block-size) * -2) 0 0 #ffff,
+    calc(var(--block-size) * -3) calc(var(--block-size) * -1) 0 0 #ffff,
+    calc(var(--block-size) * -2) calc(var(--block-size) * -1) 0 0 #ffff,
+    calc(var(--block-size) * 2) calc(var(--block-size) * -1) 0 0 #ffff,
+    calc(var(--block-size) * 3) calc(var(--block-size) * -1) 0 0 #ffff,
+    calc(var(--block-size) * -4) 0 0 0 #ffff,
+    calc(var(--block-size) * -3) 0 0 0 #ffff,
+    calc(var(--block-size) * 3) 0 0 0 #ffff,
+    calc(var(--block-size) * 4) 0 0 0 #ffff,
+    calc(var(--block-size) * -5) var(--block-size) 0 0 #ffff,
+    calc(var(--block-size) * -4) var(--block-size) 0 0 #ffff,
+    calc(var(--block-size) * 4) var(--block-size) 0 0 #ffff,
+    calc(var(--block-size) * 5) var(--block-size) 0 0 #ffff,
+    calc(var(--block-size) * -5) calc(var(--block-size) * 2) 0 0 #ffff,
+    calc(var(--block-size) * 5) calc(var(--block-size) * 2) 0 0 #ffff,
+    calc(var(--block-size) * -5) calc(var(--block-size) * 3) 0 0 #ffff,
+    calc(var(--block-size) * -3) calc(var(--block-size) * 3) 0 0 #ffff,
+    calc(var(--block-size) * 3) calc(var(--block-size) * 3) 0 0 #ffff,
+    calc(var(--block-size) * 5) calc(var(--block-size) * 3) 0 0 #ffff,
+    calc(var(--block-size) * -2) calc(var(--block-size) * 4) 0 0 #ffff,
+    calc(var(--block-size) * -1) calc(var(--block-size) * 4) 0 0 #ffff,
+    var(--block-size) calc(var(--block-size) * 4) 0 0 #ffff,
+    calc(var(--block-size) * 2) calc(var(--block-size) * 4) 0 0 #ffff;
+  background: #ffff;
+  width: var(--block-size);
+  height: var(--block-size);
+  overflow: hidden;
 }

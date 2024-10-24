@@ -1,13 +1,20 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
-@keyframes glowing-btn {
+@keyframes zoomBackgroundTablet {
   0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
+    background-size: 100%;
   }
   100% {
-    background-position: 0 0;
+    background-size: 150%;
+  }
+}
+
+@keyframes zoomBackgroundDesktop {
+  0% {
+    background-size: 150%;
+  }
+  100% {
+    background-size: 110%;
   }
 }
