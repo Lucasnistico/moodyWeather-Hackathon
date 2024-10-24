@@ -9,12 +9,13 @@
       defer
     ></script>
     <script src="./scripts/moodyWeatherAPI.js" defer></script>
+    <script src="./scripts/player.js" defer></script>
     <script src="./scripts/index.js" defer></script>
     <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body>
     <header class="header">
-      <div class="header__btn">
+      <div class="header__btn-wrap">
         <a href="#weather__btn">
           <button type="submit" class="header__btn">Check My Mood!</button>
         </a>
@@ -22,11 +23,13 @@
     </header>
     <main class="main">
       <section class="weather" id="weather">
-        <div>
-          <h2 class="weather__title">Where are you?</h2>
+        <div class="line">
+          <h1 class="weather__title">Where are you?</h1>
         </div>
         <form action="" method="post" class="weather__form">
-          <label class="weather__city" for="city"> &#127968;CITY</label>
+          <label class="weather__city" for="city">
+            &#127968; Enter your CITY name</label
+          >
           <input
             class="weather__input"
             type="text"
@@ -46,12 +49,39 @@
       <section class="music" id="music">
         <div class="music__title-wrap">
           <h2 class="music__title">
-            Here's a suggestion based on WeatherVibes!&copy;
+            Here's a suggestion based on moodyWeatherMusic Vibes!&copy;
           </h2>
         </div>
         <div class="music__space-invider"></div>
-        <ul class="playlist__response"></ul>
       </section>
+      <div class="audio-player">
+        <audio
+          class="audio-player__audio"
+          id="audioPlayer"
+          src="./assets/music/ROCK (1).mp3"
+        ></audio>
+        <button class="audio-player__button" id="playPauseBtn">Play</button>
+        <input
+          type="range"
+          class="audio-player__seek"
+          id="seekSlider"
+          value="0"
+          max="100"
+        />
+        <div class="audio-player__time">
+          <div class="audio-player__current-time" id="currentTime">00:00</div>
+          <div class="audio-player__duration" id="duration">00:00</div>
+        </div>
+        <input
+          type="range"
+          class="audio-player__volume"
+          id="volumeSlider"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+        />
+      </div>
     </main>
     <footer class="footer">
       <p class="footer__quote"></p>

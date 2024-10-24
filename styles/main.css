@@ -1,17 +1,17 @@
 @font-face {
   font-family: "Nunito";
-  src: url("../../assets/Fonts/NunitoSans-Regular.woff") format("woof"), url("../../assets/Fonts/Alernative-files/NunitoSans-Regular.woff2") format("woff2");
+  src: url("../../assets/fonts/NunitoSans-Regular.woff") format("woof"), url("../../assets/fonts/Alernative-files/NunitoSans-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Nunito";
-  src: url("../../assets/Fonts/NunitoSans-Medium.woff") format("woff"), url("../../assets/Fonts/Alernative-files/NunitoSans-Medium.woff2") format("woff2");
+  src: url("../../assets/fonts/NunitoSans-Medium.woff") format("woff"), url("../../assets/fonts/Alernative-files/NunitoSans-Medium.woff2") format("woff2");
   font-weight: 500;
 }
 @font-face {
   font-family: "Nunito";
-  src: url("../../assets/Fonts/NunitoSans-Bold.woff") format("woff"), url("../../assets/Fonts/Alernative-files/NunitoSans-Bold.woff2") format("woff2");
+  src: url("../../assets/fonts/NunitoSans-Bold.woff") format("woff"), url("../../assets/fonts/Alernative-files/NunitoSans-Bold.woff2") format("woff2");
   font-weight: 700;
 }
 body {
@@ -38,6 +38,23 @@ body {
   }
   100% {
     background-size: 110%;
+  }
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
   }
 }
 .header {
@@ -81,6 +98,7 @@ body {
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
+  height: 3rem;
 }
 .header__btn-:disabled {
   opacity: 0.5;
@@ -118,6 +136,7 @@ body {
 }
 .weather__title {
   margin: 2rem auto;
+  animation: 4s anim-lineUp ease-out forwards;
 }
 .weather__form {
   display: flex;
@@ -129,6 +148,7 @@ body {
   font-size: 1.5rem;
   color: white;
   margin-bottom: 10px;
+  animation: 7s anim-lineUp ease-out forwards;
 }
 .weather__input {
   padding: 10px;
@@ -154,6 +174,7 @@ body {
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
+  height: 2.5rem;
 }
 .weather__btn-:disabled {
   opacity: 0.5;
@@ -211,8 +232,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 5rem;
+  height: 3rem;
 }
 .music__space-invider {
   --block-size: 5px;
@@ -224,8 +244,66 @@ body {
   margin-left: 80px;
 }
 
+.audio-player {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 400px;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.audio-player__button {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-right: 1rem;
+}
+.audio-player__button :hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+.audio-player__seek,
+.audio-player__volume {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.audio-player__time {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.audio-player__current-time,
+.audio-player__duration {
+  font-size: 14px;
+  color: #ccc;
+}
+
 .footer {
-  height: 5rem;
+  height: 4rem;
   background-color: black;
   color: #ffffff;
 }
@@ -233,4 +311,5 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 1rem;
 }/*# sourceMappingURL=main.css.map */
