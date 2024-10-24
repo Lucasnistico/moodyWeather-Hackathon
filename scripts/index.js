@@ -23,7 +23,6 @@ const fetchDadJoke = async () => {
     return "Couldn't fetch a joke!";
   }
 };
-
 const renderWeather = async (city) => {
   const weatherList = document.querySelector(".weather__response");
   const messageBox = document.querySelector(".message__box");
@@ -40,7 +39,7 @@ const renderWeather = async (city) => {
       const audio = document.querySelector(".audio-player__audio");
       const playPauseBtn = document.getElementById("playPauseBtn");
 
-      if (temp <= 0 && temp <= -1) {
+      if (temp <= 0) {
         audio.src = "../assets/music/Frozen.mp3";
 
         const joke = await fetchDadJoke();
@@ -50,9 +49,8 @@ const renderWeather = async (city) => {
         audio.play();
         playPauseBtn.textContent = "Pause";
       }
-
-      if (temp >= 1 && temp <= 5) {
-        audio.src = "../assets/music/LoisArmstrong.mp3";
+      if (temp >= 1 && temp <= 3) {
+        audio.src = "../assets/music/LoiusArmstrong.mp3";
 
         const joke = await fetchDadJoke();
         weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
@@ -62,7 +60,18 @@ const renderWeather = async (city) => {
         playPauseBtn.textContent = "Pause";
       }
 
-      if (temp > 5 && temp <= 10) {
+      if (temp >= 4 && temp <= 7) {
+        audio.src = "../assets/music/EdSheeren.mp3";
+
+        const joke = await fetchDadJoke();
+        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
+        messageBox.innerText = "It's cold! Here's a joke to keep you warm.";
+        footerJoke.innerText = joke;
+        audio.play();
+        playPauseBtn.textContent = "Pause";
+      }
+
+      if (temp >= 8 && temp <= 11) {
         audio.src = "../assets/music/FEEL.mp3";
         const joke = await fetchDadJoke();
         weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
@@ -72,7 +81,7 @@ const renderWeather = async (city) => {
         playPauseBtn.textContent = "Pause";
       }
 
-      if (temp >= 11 && temp <= 15) {
+      if (temp >= 12 && temp <= 15) {
         weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
         messageBox.innerText = "Weather is keeping you happy!";
         audio.src = "../assets/music/WORK.mp3";
@@ -96,7 +105,7 @@ const renderWeather = async (city) => {
         playPauseBtn.textContent = "Pause";
       }
 
-      if (temp >= 23 && temp <= 27) {
+      if (temp >= 23 && temp <= 25) {
         weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
         messageBox.innerText = "Weather is keeping you happy!";
         audio.src = "../assets/music/Bob.mp3";
@@ -104,15 +113,21 @@ const renderWeather = async (city) => {
         playPauseBtn.textContent = "Pause";
       }
 
-      if (temp >= 28 && temp <= 32) {
+      if (temp >= 26 && temp <= 29) {
         weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
         messageBox.innerText = "Weather is keeping you happy!";
         audio.src = "../assets/music/Bob.mp3";
         audio.play();
         playPauseBtn.textContent = "Pause";
       }
-
-      if (temp >= 33 && temp <= 40) {
+      if (temp >= 30 && temp <= 34) {
+        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
+        messageBox.innerText = "Weather is keeping you happy!";
+        audio.src = "../assets/music/Bob.mp3";
+        audio.play();
+        playPauseBtn.textContent = "Pause";
+      }
+      if (temp >= 35 && temp <= 40) {
         weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
         messageBox.innerText = "Weather is keeping you happy!";
         audio.src = "../assets/music/JhonnyCash.mp3";
