@@ -255,7 +255,6 @@ body {
   border-radius: 8px;
   margin-top: 1rem;
 }
-
 .audio-player__button {
   background-color: #13aa52;
   border: 1px solid #13aa52;
@@ -283,22 +282,17 @@ body {
   box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
   transform: translateY(-2px);
 }
-
-.audio-player__seek,
-.audio-player__volume {
+.audio-player__seek, .audio-player__volume {
   width: 100%;
   margin: 10px 0;
 }
-
 .audio-player__time {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
 }
-
-.audio-player__current-time,
-.audio-player__duration {
-  font-size: 14px;
+.audio-player__current-time, .audio-player__duration {
+  font-size: 0.875rem;
   color: #ccc;
 }
 

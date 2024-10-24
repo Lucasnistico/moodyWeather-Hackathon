@@ -126,25 +126,25 @@
   padding: 10px;
   border-radius: 8px;
   margin-top: 1rem;
-}
-.audio-player__button {
-  @include audioPlayerButton;
-  margin-right: 1rem;
-}
-.audio-player__seek,
-.audio-player__volume {
-  width: 100%;
-  margin: 10px 0;
-}
-.audio-player__time {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.audio-player__current-time,
-.audio-player__duration {
-  font-size: 14px;
-  color: #ccc;
+  &__button {
+    @include audioPlayerButton;
+    margin-right: 1rem;
+  }
+  &__seek,
+  &__volume {
+    width: 100%;
+    margin: 10px 0;
+  }
+  &__time {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  &__current-time,
+  &__duration {
+    font-size: 0.875rem;
+    color: #ccc;
+  }
 }
 .footer {
   height: 4rem;
