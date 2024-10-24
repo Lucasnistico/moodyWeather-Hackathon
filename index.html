@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HOME | MoodyWeather</title>
-    <script src="./scripts/moodyWeatherAPI.js" defer></script>
     <script
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
       defer
     ></script>
+    <script src="./scripts/moodyWeatherAPI.js" defer></script>
     <script src="./scripts/index.js" defer></script>
     <link rel="stylesheet" href="./styles/main.css" />
   </head>
@@ -16,7 +16,7 @@
     <header class="header">
       <div class="header__btn">
         <a href="#weather__btn">
-          <button type="submit" class="header__btn">Check My Mood</button>
+          <button type="submit" class="header__btn">Check My Mood!</button>
         </a>
       </div>
     </header>
@@ -35,25 +35,26 @@
             placeholder="Enter your city name"
           />
           <button type="submit" class="weather__btn" id="weather__btn">
-            Check Weather
+            How do I feel?
           </button>
         </form>
         <section class="weather__reponse">
           <ul class="weather__response"></ul>
         </section>
+        <p class="message__box"></p>
       </section>
       <section class="music" id="music">
         <div class="music__title-wrap">
           <h2 class="music__title">
-            Here's a suggestion based on Weather Vibes!
+            Here's a suggestion based on WeatherVibes!&copy;
           </h2>
         </div>
         <div class="music__space-invider"></div>
-        <section class="playlist__response"></section>
+        <ul class="playlist__response"></ul>
       </section>
     </main>
     <footer class="footer">
-      <p class="footer__quote">"Your motivational quote will appear here."</p>
+      <p class="footer__quote"></p>
     </footer>
   </body>
 </html>

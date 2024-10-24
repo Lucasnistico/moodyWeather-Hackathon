@@ -12,23 +12,42 @@ const fetchWeather = async (city) => {
   }
 };
 
+const fetchDadJoke = async () => {
+  try {
+    const response = await axios.get("https://icanhazdadjoke.com/", {
+      headers: { Accept: "application/json" },
+    });
+    return response.data.joke;
+  } catch (error) {
+    console.error("Error fetching dad joke:", error);
+    return "Couldn't fetch a joke!";
+  }
+};
+
 const renderWeather = async (city) => {
   const weatherList = document.querySelector(".weather__response");
+  const messageBox = document.querySelector(".message__box"); // Select the new message box element
+  const footerJoke = document.querySelector(".footer__quote"); // Select the footer joke element
   weatherList.innerHTML = "";
-  let temp;
+  messageBox.innerHTML = ""; // Clear previous messages
+  footerJoke.innerHTML = ""; // Clear previous joke
 
   try {
-    temp = await fetchWeather(city);
+    const temp = await fetchWeather(city);
     if (temp !== undefined) {
       const weatherItem = document.createElement("li");
-      weatherItem.innerText = `Temperature in ${city}: ${temp}°C`;
+
+      if (temp >= 10) {
+        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
+        messageBox.innerText = "Weather is keeping you happy!"; // Display the happy weather message
+      } else {
+        const joke = await fetchDadJoke();
+        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
+        messageBox.innerText = "It's cold! Here's a joke to keep you warm."; // Display the cold weather message
+        footerJoke.innerText = joke; // Display the joke in the footer
+      }
+
       weatherList.appendChild(weatherItem);
-
-      const playlistName = getPlaylistByTemperature(temp);
-
-      const playlists = await fetchDeezerPlaylist(playlistName);
-
-      displayPlaylists(playlists);
     }
   } catch (error) {
     weatherList.textContent = "Error fetching weather data.";
@@ -45,44 +64,3 @@ form.addEventListener("submit", async (event) => {
     console.error("City name is required!");
   }
 });
-
-const fetchDeezerPlaylist = async (playlistName) => {
-  const corsProxy = "https://cors-anywhere.herokuapp.com/";
-  const url = `${corsProxy}https://api.deezer.com/search/playlist?q=${encodeURIComponent(
-    playlistName
-  )}`;
-
-  try {
-    const response = await axios.get(url);
-    const data = response.data;
-
-    if (data && data.data && data.data.length > 0) {
-      return data.data;
-    } else {
-      console.error("No playlists found for this search.");
-      return [];
-    }
-  } catch (error) {
-    console.error("Error fetching playlists from Deezer:", error);
-    return [];
-  }
-};
-
-function displayPlaylists(playlists) {
-  const playlistSection = document.querySelector(".playlist__response");
-  playlistSection.innerHTML = "";
-
-  playlists.forEach((playlist) => {
-    const playlistItem = document.createElement("div");
-    playlistItem.classList.add("playlist-item");
-
-    playlistItem.innerHTML = `
-      <h3>${playlist.title}</h3>
-      <a href="${playlist.link}" target="_blank">
-        <img src="${playlist.picture_medium}" alt="${playlist.title}">
-      </a>
-    `;
-
-    playlistSection.appendChild(playlistItem);
-  });
-}

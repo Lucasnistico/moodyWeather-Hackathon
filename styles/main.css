@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("../../assets/Fonts/NunitoSans-Regular.woff") format("woof"), url("../../assets/Fonts/Alernative-files/NunitoSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../../assets/Fonts/NunitoSans-Medium.woff") format("woff"), url("../../assets/Fonts/Alernative-files/NunitoSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../../assets/Fonts/NunitoSans-Bold.woff") format("woff"), url("../../assets/Fonts/Alernative-files/NunitoSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+body {
+  font-family: Nunito, Arial, Helvetica, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -50,13 +70,10 @@
   border: 1px solid #0077cc;
   border-radius: 4px;
   color: #ffffff;
-  cursor: pointer;
-  font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  letter-spacing: -0.022em;
   line-height: 1.27059;
-  padding: 0.25rem 1rem;
+  padding: 0.25rem 0.5rem;
   text-align: center;
   vertical-align: baseline;
   -moz-user-select: none;
@@ -66,7 +83,6 @@
   white-space: nowrap;
 }
 .header__btn-:disabled {
-  cursor: default;
   opacity: 0.5;
 }
 .header__btn-:hover {
@@ -127,13 +143,10 @@
   border: 1px solid #0077cc;
   border-radius: 4px;
   color: #ffffff;
-  cursor: pointer;
-  font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  letter-spacing: -0.022em;
   line-height: 1.27059;
-  padding: 0.25rem 1rem;
+  padding: 0.25rem 0.5rem;
   text-align: center;
   vertical-align: baseline;
   -moz-user-select: none;
@@ -143,7 +156,6 @@
   white-space: nowrap;
 }
 .weather__btn-:disabled {
-  cursor: default;
   opacity: 0.5;
 }
 .weather__btn-:hover {
@@ -191,10 +203,16 @@
   white-space: nowrap;
 }
 
+.message__box {
+  margin-top: 1rem;
+}
+
 .music {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 10rem;
+  height: 5rem;
 }
 .music__space-invider {
   --block-size: 5px;
@@ -203,10 +221,16 @@
   width: var(--block-size);
   height: var(--block-size);
   overflow: hidden;
+  margin-left: 80px;
 }
 
 .footer {
   height: 5rem;
   background-color: black;
   color: #ffffff;
+}
+.footer__quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */

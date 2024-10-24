@@ -6,24 +6,13 @@ class moodyWeatherAPI {
 
   async getWeatherData(city) {
     try {
-      const weather = await axios.get(
+      const response = await axios.get(
         `${this.baseUrl}?q=${city}&appid=${this.apiKey}&units=metric`
       );
-      return weather.data.main.temp;
+      return response.data.main.temp;
     } catch (error) {
       console.error("Error fetching weather data:", error);
+      throw error;
     }
-  }
-}
-
-function getPlaylistByTemperature(temp) {
-  if (temp >= 30) {
-    return "Summer Vibes 🌞 - Hot Summer Day!";
-  } else if (temp >= 20) {
-    return "Chill Beats 🌤️ - Still quite pleasant.";
-  } else if (temp >= 10) {
-    return "Getting Chilli 🍂 - Getting Chilli.";
-  } else {
-    return "Cozy Coffee Shop 🔥 - Better Stay In.";
   }
 }
