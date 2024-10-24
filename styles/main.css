@@ -74,12 +74,12 @@ body {
 }
 @media screen and (min-width: 768px) {
   .header {
-    animation: zoomBackgroundTablet 3s ease-in-out 1 forwards;
+    animation: zoomBackgroundTablet 4s ease-in-out 1 forwards;
   }
 }
 @media screen and (min-width: 1024px) {
   .header {
-    animation: zoomBackgroundDesktop 3s ease-in-out 1 forwards;
+    animation: zoomBackgroundDesktop 4s ease-in-out 1 forwards;
   }
 }
 .header__btn {
@@ -306,4 +306,9 @@ body {
   justify-content: center;
   align-items: center;
   padding-top: 1rem;
+}
+.footer__icon {
+  height: 2rem;
+  width: 2rem;
+  margin-left: 1rem;
 }/*# sourceMappingURL=main.css.map */

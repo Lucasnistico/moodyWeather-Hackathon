@@ -20,11 +20,11 @@
   justify-content: center;
 
   @include tablet {
-    animation: zoomBackgroundTablet 3s ease-in-out 1 forwards;
+    animation: zoomBackgroundTablet 4s ease-in-out 1 forwards;
   }
 
   @include desktop {
-    animation: zoomBackgroundDesktop 3s ease-in-out 1 forwards;
+    animation: zoomBackgroundDesktop 4s ease-in-out 1 forwards;
   }
 
   &__btn {
@@ -153,5 +153,10 @@
   &__quote {
     @include flex-center;
     padding-top: 1rem;
+  }
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    margin-left: 1rem;
   }
 }
