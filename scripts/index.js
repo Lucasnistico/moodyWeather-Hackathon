@@ -23,6 +23,19 @@ const fetchDadJoke = async () => {
     return "Couldn't fetch a joke!";
   }
 };
+
+const fetchLocalTime = async () => {
+  try {
+    const responseTime = await axios.get(
+      "https://timeapi.io/api/time/current/zone?timeZone="
+    );
+    console.log(`Time in your city is: ${time}`);
+  } catch (error) {
+    console.error("Error fetching time", error);
+    return "Could not fetch time";
+  }
+};
+
 const renderWeather = async (city) => {
   const weatherList = document.querySelector(".weather__response");
   const messageBox = document.querySelector(".message__box");

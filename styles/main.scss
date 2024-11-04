@@ -55,9 +55,20 @@
   flex-direction: column;
   height: 30rem;
 
+  &__line {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
   &__title {
     margin: 2rem auto;
     animation: 4s anim-lineUp ease-out forwards;
+  }
+
+  &__title-space {
+    @include space-invider;
+    transform: rotate(-15deg);
   }
 
   &__form {
@@ -70,6 +81,7 @@
     font-size: 1.5rem;
     color: white;
     margin-bottom: 10px;
+
     animation: 7s anim-lineUp ease-out forwards;
   }
 
@@ -111,16 +123,22 @@
 .music {
   @include flex-center;
   height: 3rem;
+
+  &__title {
+    max-width: 100%;
+  }
+
   &__space-invider {
     @include space-invider;
-    margin-left: 80px;
+    margin-left: 60px;
+    transform: rotate(15deg);
   }
 }
 .audio-player {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 400px;
+  width: 25rem max-width 100%;
   background-color: white;
   color: black;
   padding: 10px;

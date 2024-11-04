@@ -134,9 +134,23 @@ body {
   flex-direction: column;
   height: 30rem;
 }
+.weather__line {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
 .weather__title {
   margin: 2rem auto;
   animation: 4s anim-lineUp ease-out forwards;
+}
+.weather__title-space {
+  --block-size: 5px;
+  box-shadow: 0 0 0 var(--block-size) white, 0 var(--block-size) 0 var(--block-size) white, calc(var(--block-size) * -2.5) calc(var(--block-size) * 1.5) 0 calc(var(--block-size) * 0.5) white, calc(var(--block-size) * 2.5) calc(var(--block-size) * 1.5) 0 calc(var(--block-size) * 0.5) white, calc(var(--block-size) * -3) calc(var(--block-size) * -3) 0 0 white, calc(var(--block-size) * 3) calc(var(--block-size) * -3) 0 0 white, calc(var(--block-size) * -2) calc(var(--block-size) * -2) 0 0 white, calc(var(--block-size) * 2) calc(var(--block-size) * -2) 0 0 white, calc(var(--block-size) * -3) calc(var(--block-size) * -1) 0 0 white, calc(var(--block-size) * -2) calc(var(--block-size) * -1) 0 0 white, calc(var(--block-size) * 2) calc(var(--block-size) * -1) 0 0 white, calc(var(--block-size) * 3) calc(var(--block-size) * -1) 0 0 white, calc(var(--block-size) * -4) 0 0 0 white, calc(var(--block-size) * -3) 0 0 0 white, calc(var(--block-size) * 3) 0 0 0 white, calc(var(--block-size) * 4) 0 0 0 white, calc(var(--block-size) * -5) var(--block-size) 0 0 white, calc(var(--block-size) * -4) var(--block-size) 0 0 white, calc(var(--block-size) * 4) var(--block-size) 0 0 white, calc(var(--block-size) * 5) var(--block-size) 0 0 white, calc(var(--block-size) * -5) calc(var(--block-size) * 2) 0 0 white, calc(var(--block-size) * 5) calc(var(--block-size) * 2) 0 0 white, calc(var(--block-size) * -5) calc(var(--block-size) * 3) 0 0 white, calc(var(--block-size) * -3) calc(var(--block-size) * 3) 0 0 white, calc(var(--block-size) * 3) calc(var(--block-size) * 3) 0 0 white, calc(var(--block-size) * 5) calc(var(--block-size) * 3) 0 0 white, calc(var(--block-size) * -2) calc(var(--block-size) * 4) 0 0 white, calc(var(--block-size) * -1) calc(var(--block-size) * 4) 0 0 white, var(--block-size) calc(var(--block-size) * 4) 0 0 white, calc(var(--block-size) * 2) calc(var(--block-size) * 4) 0 0 white;
+  background: white;
+  width: var(--block-size);
+  height: var(--block-size);
+  overflow: hidden;
+  transform: rotate(-15deg);
 }
 .weather__form {
   display: flex;
@@ -234,6 +248,9 @@ body {
   align-items: center;
   height: 3rem;
 }
+.music__title {
+  max-width: 100%;
+}
 .music__space-invider {
   --block-size: 5px;
   box-shadow: 0 0 0 var(--block-size) white, 0 var(--block-size) 0 var(--block-size) white, calc(var(--block-size) * -2.5) calc(var(--block-size) * 1.5) 0 calc(var(--block-size) * 0.5) white, calc(var(--block-size) * 2.5) calc(var(--block-size) * 1.5) 0 calc(var(--block-size) * 0.5) white, calc(var(--block-size) * -3) calc(var(--block-size) * -3) 0 0 white, calc(var(--block-size) * 3) calc(var(--block-size) * -3) 0 0 white, calc(var(--block-size) * -2) calc(var(--block-size) * -2) 0 0 white, calc(var(--block-size) * 2) calc(var(--block-size) * -2) 0 0 white, calc(var(--block-size) * -3) calc(var(--block-size) * -1) 0 0 white, calc(var(--block-size) * -2) calc(var(--block-size) * -1) 0 0 white, calc(var(--block-size) * 2) calc(var(--block-size) * -1) 0 0 white, calc(var(--block-size) * 3) calc(var(--block-size) * -1) 0 0 white, calc(var(--block-size) * -4) 0 0 0 white, calc(var(--block-size) * -3) 0 0 0 white, calc(var(--block-size) * 3) 0 0 0 white, calc(var(--block-size) * 4) 0 0 0 white, calc(var(--block-size) * -5) var(--block-size) 0 0 white, calc(var(--block-size) * -4) var(--block-size) 0 0 white, calc(var(--block-size) * 4) var(--block-size) 0 0 white, calc(var(--block-size) * 5) var(--block-size) 0 0 white, calc(var(--block-size) * -5) calc(var(--block-size) * 2) 0 0 white, calc(var(--block-size) * 5) calc(var(--block-size) * 2) 0 0 white, calc(var(--block-size) * -5) calc(var(--block-size) * 3) 0 0 white, calc(var(--block-size) * -3) calc(var(--block-size) * 3) 0 0 white, calc(var(--block-size) * 3) calc(var(--block-size) * 3) 0 0 white, calc(var(--block-size) * 5) calc(var(--block-size) * 3) 0 0 white, calc(var(--block-size) * -2) calc(var(--block-size) * 4) 0 0 white, calc(var(--block-size) * -1) calc(var(--block-size) * 4) 0 0 white, var(--block-size) calc(var(--block-size) * 4) 0 0 white, calc(var(--block-size) * 2) calc(var(--block-size) * 4) 0 0 white;
@@ -241,14 +258,15 @@ body {
   width: var(--block-size);
   height: var(--block-size);
   overflow: hidden;
-  margin-left: 80px;
+  margin-left: 60px;
+  transform: rotate(15deg);
 }
 
 .audio-player {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 400px;
+  width: 25rem max-width 100%;
   background-color: white;
   color: black;
   padding: 10px;
