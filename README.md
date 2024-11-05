@@ -2,6 +2,7 @@
 
 **MoodyWeather** is a site that combines music and weather to brighten your day! Enter your city, and the site will suggest a song that matches the current weather. If it’s cold, you’ll also get a joke to lift your spirits. 🥶😆
 
+
 ![Moody Weather Screenshot](./assets/images/moody.png)
 
 ---
