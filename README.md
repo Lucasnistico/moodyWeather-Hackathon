@@ -18,7 +18,7 @@
 
 - **Frontend:** HTML, CSS (with subtle animations), JavaScript
 - **APIs:** Weather and music APIs to provide personalized suggestions
-- **Frameworks and Tools:** [Specify any JavaScript framework or library used, if applicable]
+- **Frameworks and Tools:** 
 
 ---
 
