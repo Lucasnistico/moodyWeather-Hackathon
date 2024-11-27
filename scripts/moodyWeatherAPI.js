@@ -1,7 +1,7 @@
 class moodyWeatherAPI {
   constructor(apiKey) {
     this.apiKey = apiKey;
-    this.baseUrl = "http://api.openweathermap.org/data/2.5/weather";
+    this.baseUrl = "https://api.openweathermap.org/data/2.5/weather";
   }
 
   async getWeatherData(city) {
