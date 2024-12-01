@@ -132,7 +132,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 30rem;
+  height: 35rem;
 }
 .weather__line {
   display: flex;
@@ -245,6 +245,7 @@ body {
 .message__box {
   margin-top: 1rem;
   font-size: large;
+  padding: 1rem 2rem;
 }
 
 .music {
@@ -255,6 +256,8 @@ body {
 }
 .music__title {
   max-width: 100%;
+  padding-left: 2rem;
+  font-size: medium;
 }
 .music__space-invider {
   --block-size: 5px;
@@ -271,12 +274,11 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 25rem max-width 100%;
   background-color: white;
   color: black;
   padding: 10px;
   border-radius: 8px;
-  margin-top: 1rem;
+  margin-top: 3.5rem;
 }
 .audio-player__button {
   background-color: #13aa52;
@@ -320,7 +322,7 @@ body {
 }
 
 .footer {
-  height: 8rem;
+  height: 10rem;
   background-color: black;
   color: #ffffff;
 }
@@ -328,8 +330,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 2.5rem;
   font-size: large;
+  padding: 3rem 2rem 0rem 2rem;
 }
 .footer__icon {
   height: 2rem;
