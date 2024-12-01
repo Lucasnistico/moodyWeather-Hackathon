@@ -93,42 +93,49 @@ const renderWeather = async (city) => {
         await setWeatherResponse(
           "😎 Weather is keeping you happy!🌞",
           "../assets/music/WORK.mp3",
-          true
+          false
         );
       } else if (temp <= 18) {
         await setWeatherResponse(
           "😎 Weather is keeping you happy!🌞",
-          "../assets/music/Rock.mp3"
+          "../assets/music/Rock.mp3",
+          false
         );
       } else if (temp <= 22) {
         await setWeatherResponse(
           "😎 Weather is keeping you happy!🌞",
-          "../assets/music/CalvinHarris.mp3"
+          "../assets/music/CalvinHarris.mp3",
+          false
         );
       } else if (temp <= 25) {
         await setWeatherResponse(
           "😎 Weather is keeping you happy!🌞",
-          "../assets/music/CalvinHarris.mp3"
+          "../assets/music/CalvinHarris.mp3",
+          false
         );
       } else if (temp <= 28) {
         await setWeatherResponse(
           "😎 Weather is keeping you happy!🌞",
-          "../assets/music/Bob.mp3"
+          "../assets/music/Bob.mp3",
+          false
         );
       } else if (temp <= 29) {
         await setWeatherResponse(
           "😎 Weather is keeping you happy!🌞",
-          "../assets/music/Sublime.mp3"
+          "../assets/music/Sublime.mp3",
+          false
         );
       } else if (temp <= 31) {
         await setWeatherResponse(
           "😎 Ok it's too hot!🌞",
-          "../assets/music/JhonnyCash.mp3"
+          "../assets/music/JhonnyCash.mp3",
+          false
         );
       } else if (temp > 34) {
         await setWeatherResponse(
           "🔥 It's really hot! Here's something smooth to chill. 🎶",
-          "../assets/music/Sade.mp3"
+          "../assets/music/Sade.mp3",
+          false
         );
       } else {
         weatherItem.innerText = `Temperature in ${city}: ${temp}°C. No specific weather conditions found.`;
