@@ -59,7 +59,7 @@ body {
 }
 .header {
   background-color: black;
-  height: 100vh;
+  height: 80vh;
   width: 100%;
   background-image: url(../assets/images/moodyWeatherHead.webp);
   background-position: center;
@@ -238,8 +238,13 @@ body {
   white-space: nowrap;
 }
 
+.li-response {
+  list-style: none;
+}
+
 .message__box {
   margin-top: 1rem;
+  font-size: large;
 }
 
 .music {
@@ -315,7 +320,7 @@ body {
 }
 
 .footer {
-  height: 4rem;
+  height: 8rem;
   background-color: black;
   color: #ffffff;
 }
@@ -323,7 +328,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 1rem;
+  padding-top: 2.5rem;
+  font-size: large;
 }
 .footer__icon {
   height: 2rem;

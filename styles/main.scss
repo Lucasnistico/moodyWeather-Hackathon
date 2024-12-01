@@ -6,7 +6,7 @@
 
 .header {
   background-color: black;
-  height: 100vh;
+  height: 80vh;
   width: 100%;
   background-image: url(../assets/images/moodyWeatherHead.webp);
   background-position: center;
@@ -117,8 +117,14 @@
     @include response;
   }
 }
+
+.li-response {
+  list-style: none;
+}
+
 .message__box {
   margin-top: 1rem;
+  font-size: large;
 }
 .music {
   @include flex-center;
@@ -165,12 +171,13 @@
   }
 }
 .footer {
-  height: 4rem;
+  height: 8rem;
   background-color: black;
   color: #ffffff;
   &__quote {
     @include flex-center;
-    padding-top: 1rem;
+    padding-top: 2.5rem;
+    font-size: large;
   }
   &__icon {
     height: 2rem;

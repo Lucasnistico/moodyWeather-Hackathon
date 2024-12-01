@@ -24,146 +24,133 @@ const fetchDadJoke = async () => {
   }
 };
 
-const fetchLocalTime = async () => {
-  try {
-    const responseTime = await axios.get(
-      "https://timeapi.io/api/time/current/zone?timeZone="
-    );
-    console.log(`Time in your city is: ${time}`);
-  } catch (error) {
-    console.error("Error fetching time", error);
-    return "Could not fetch time";
-  }
-};
-
 const renderWeather = async (city) => {
-  const weatherList = document.querySelector(".weather__response");
+  const weatherList = document.querySelector(".weather__responses");
   const messageBox = document.querySelector(".message__box");
   const footerJoke = document.querySelector(".footer__quote");
+  const audio = document.querySelector(".audio-player__audio");
+  const playPauseBtn = document.getElementById("playPauseBtn");
+
   weatherList.innerHTML = "";
   messageBox.innerHTML = "";
   footerJoke.innerHTML = "";
 
+  const weatherItem = document.createElement("li");
+  weatherItem.classList.add("li-response");
+  weatherList.appendChild(weatherItem);
+
   try {
     const temp = await fetchWeather(city);
-    if (temp !== undefined) {
-      const weatherItem = document.createElement("li");
 
-      const audio = document.querySelector(".audio-player__audio");
-      const playPauseBtn = document.getElementById("playPauseBtn");
+    if (temp !== undefined) {
+      const setWeatherResponse = async (
+        message,
+        musicPath,
+        fetchJoke = false
+      ) => {
+        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
+        messageBox.innerText = message;
+
+        if (musicPath) {
+          audio.src = musicPath;
+          audio.play();
+          playPauseBtn.textContent = "Pause";
+        }
+
+        if (fetchJoke) {
+          const joke = await fetchDadJoke();
+          footerJoke.innerText = joke;
+        } else {
+          footerJoke.innerText = "";
+        }
+      };
 
       if (temp <= 0) {
-        audio.src = "../assets/music/Frozen.mp3";
-
-        const joke = await fetchDadJoke();
-        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
-        messageBox.innerText = "It's cold! Here's a joke to keep you warm.";
-        footerJoke.innerText = joke;
-        audio.play();
-        playPauseBtn.textContent = "Pause";
+        await setWeatherResponse(
+          "❄️ It's cold! Here's a joke to keep you warm. 🤣",
+          "../assets/music/Frozen.mp3",
+          true
+        );
+      } else if (temp <= 3) {
+        await setWeatherResponse(
+          "❄️ It's cold! Here's a joke to keep you warm.🤣",
+          "../assets/music/LoiusArmstrong.mp3",
+          true
+        );
+      } else if (temp <= 7) {
+        await setWeatherResponse(
+          "❄️ It's cold! Here's a joke to keep you warm.🤣",
+          "../assets/music/EdSheeren.mp3",
+          true
+        );
+      } else if (temp <= 11) {
+        await setWeatherResponse(
+          "❄️ It's cold! Here's a joke to keep you warm.🤣",
+          "../assets/music/FEEL.mp3",
+          true
+        );
+      } else if (temp <= 15) {
+        await setWeatherResponse(
+          "😎 Weather is keeping you happy!🌞",
+          "../assets/music/WORK.mp3",
+          true
+        );
+      } else if (temp <= 18) {
+        await setWeatherResponse(
+          "😎 Weather is keeping you happy!🌞",
+          "../assets/music/Rock.mp3"
+        );
+      } else if (temp <= 22) {
+        await setWeatherResponse(
+          "😎 Weather is keeping you happy!🌞",
+          "../assets/music/CalvinHarris.mp3"
+        );
+      } else if (temp <= 25) {
+        await setWeatherResponse(
+          "😎 Weather is keeping you happy!🌞",
+          "../assets/music/CalvinHarris.mp3"
+        );
+      } else if (temp <= 28) {
+        await setWeatherResponse(
+          "😎 Weather is keeping you happy!🌞",
+          "../assets/music/Bob.mp3"
+        );
+      } else if (temp <= 29) {
+        await setWeatherResponse(
+          "😎 Weather is keeping you happy!🌞",
+          "../assets/music/Sublime.mp3"
+        );
+      } else if (temp <= 31) {
+        await setWeatherResponse(
+          "😎 Ok it's too hot!🌞",
+          "../assets/music/JhonnyCash.mp3"
+        );
+      } else if (temp > 34) {
+        await setWeatherResponse(
+          "🔥 It's really hot! Here's something smooth to chill. 🎶",
+          "../assets/music/Sade.mp3"
+        );
+      } else {
+        weatherItem.innerText = `Temperature in ${city}: ${temp}°C. No specific weather conditions found.`;
       }
-      if (temp >= 1 && temp <= 3) {
-        audio.src = "../assets/music/LoiusArmstrong.mp3";
-
-        const joke = await fetchDadJoke();
-        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
-        messageBox.innerText = "It's cold! Here's a joke to keep you warm.";
-        footerJoke.innerText = joke;
-        audio.play();
-        playPauseBtn.textContent = "Pause";
-      }
-
-      if (temp >= 4 && temp <= 7) {
-        audio.src = "../assets/music/EdSheeren.mp3";
-
-        const joke = await fetchDadJoke();
-        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
-        messageBox.innerText = "It's cold! Here's a joke to keep you warm.";
-        footerJoke.innerText = joke;
-        audio.play();
-        playPauseBtn.textContent = "Pause";
-      }
-
-      if (temp >= 8 && temp <= 11) {
-        audio.src = "../assets/music/FEEL.mp3";
-        const joke = await fetchDadJoke();
-        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
-        messageBox.innerText = "It's cold! Here's a joke to keep you warm.";
-        footerJoke.innerText = joke;
-        audio.play();
-        playPauseBtn.textContent = "Pause";
-      }
-
-      if (temp >= 12 && temp <= 15) {
-        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
-        messageBox.innerText = "Weather is keeping you happy!";
-        audio.src = "../assets/music/WORK.mp3";
-        audio.play();
-        playPauseBtn.textContent = "Pause";
-      }
-
-      if (temp >= 16 && temp <= 18) {
-        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
-        messageBox.innerText = "Weather is keeping you happy!";
-        audio.src = "../assets/music/Sublime.mp3";
-        audio.play();
-        playPauseBtn.textContent = "Pause";
-      }
-
-      if (temp >= 19 && temp <= 22) {
-        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
-        messageBox.innerText = "Weather is keeping you happy!";
-        audio.src = "../assets/music/Rock.mp3";
-        audio.play();
-        playPauseBtn.textContent = "Pause";
-      }
-
-      if (temp >= 23 && temp <= 25) {
-        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
-        messageBox.innerText = "Weather is keeping you happy!";
-        audio.src = "../assets/music/Bob.mp3";
-        audio.play();
-        playPauseBtn.textContent = "Pause";
-      }
-
-      if (temp >= 26 && temp <= 29) {
-        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
-        messageBox.innerText = "Weather is keeping you happy!";
-        audio.src = "../assets/music/Bob.mp3";
-        audio.play();
-        playPauseBtn.textContent = "Pause";
-      }
-      if (temp >= 30 && temp <= 34) {
-        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
-        messageBox.innerText = "Weather is keeping you happy!";
-        audio.src = "../assets/music/Bob.mp3";
-        audio.play();
-        playPauseBtn.textContent = "Pause";
-      }
-      if (temp >= 35 && temp <= 40) {
-        weatherItem.innerText = `Temperature in ${city}: ${temp}°C.`;
-        messageBox.innerText = "Weather is keeping you happy!";
-        audio.src = "../assets/music/JhonnyCash.mp3";
-        audio.play();
-        playPauseBtn.textContent = "Pause";
-      }
-
-      weatherList.appendChild(weatherItem);
     }
   } catch (error) {
-    console.log(error);
-
-    weatherList.textContent = "City must be valid!";
+    console.error("Error fetching weather data:", error);
+    weatherList.textContent = "City must be valid! ¬¬";
   }
 };
 
 const form = document.querySelector(".weather__form");
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  const city = event.target.city.value;
+  const city = event.target.city.value.trim();
+  const messageBox = document.querySelector(".message__box");
+
   if (city) {
+    messageBox.innerHTML = "";
     await renderWeather(city);
   } else {
+    messageBox.innerText = "City name is required!";
     console.error("City name is required!");
   }
 });
