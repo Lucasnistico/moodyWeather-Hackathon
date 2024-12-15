@@ -5,6 +5,9 @@ const currentTimeDisplay = document.getElementById("currentTime");
 const durationDisplay = document.getElementById("duration");
 const volumeSlider = document.getElementById("volumeSlider");
 
+audioPlayer.volume = 0.5;
+volumeSlider.value = 0.5;
+
 playPauseBtn.addEventListener("click", () => {
   if (audioPlayer.paused) {
     audioPlayer.play();
